@@ -1,13 +1,14 @@
+from __future__ import annotations
 from typing import List, Union, Optional
 
 from .cache_manager import CacheManager
-from .. import UnavailableGuild, Guild
 
 
 class GuildManager(CacheManager):
     def __init__(
         self, client, guilds: Optional[List[Union[Guild, UnavailableGuild]]] = None
     ):
+        from .. import UnavailableGuild, Guild
         if guilds is None:
             guilds = []
 
